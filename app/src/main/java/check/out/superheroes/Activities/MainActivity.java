@@ -1,11 +1,13 @@
 package check.out.superheroes.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<SuperHero>>() {
             @Override
             public void onResponse(Call<List<SuperHero>> call, Response<List<SuperHero>> response) {
+                pg.dismiss();
                 Log.d(TAG,"Working"+response.message());
                 if (response.body() != null) {
                     GenerateDataList(response.body());
@@ -93,4 +96,15 @@ public class MainActivity extends AppCompatActivity {
         itemsAdapter.msetOnItemClickLister(onItemCLickListener);
     }
 
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if(newConfig.orientation== Configuration.ORIENTATION_PORTRAIT){
+            setContentView(R.layout.activity_main);
+        }
+        if(newConfig.orientation== Configuration.ORIENTATION_LANDSCAPE){
+            setContentView(R.layout.activity_main);
+        }
+    }
 }

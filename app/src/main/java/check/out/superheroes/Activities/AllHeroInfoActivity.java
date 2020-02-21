@@ -2,11 +2,14 @@ package check.out.superheroes.Activities;
 
 import android.annotation.SuppressLint;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -92,7 +95,7 @@ public class AllHeroInfoActivity extends AppCompatActivity implements BaseSlider
     private TextView heroWork;
     private RequestOptions requestOptions;
     private String TAG;
-
+    private GetDataService getService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,8 +123,12 @@ public class AllHeroInfoActivity extends AppCompatActivity implements BaseSlider
         pg.setMessage("loading super heroes...");
         pg.show();
 
-        GetDataService getService = RetrofitClientInstance.getRetrofit().create(GetDataService.class);
+        getService = RetrofitClientInstance.getRetrofit().create(GetDataService.class);
 
+        callSuperHero(pg,getService,catchInt);
+    }
+
+    public void callSuperHero(ProgressDialog pg ,GetDataService getService, int catchInt){
         Call<SuperHero> call = getService.getId(catchInt);
         call.enqueue(new Callback<SuperHero>() {
             @Override
@@ -288,5 +295,17 @@ public class AllHeroInfoActivity extends AppCompatActivity implements BaseSlider
     @Override
     public void onSliderClick(BaseSliderView slider) {
 
+    }
+
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation== Configuration.ORIENTATION_PORTRAIT){
+            setContentView(R.layout.activity_all_hero_info);
+        }
+        if(newConfig.orientation== Configuration.ORIENTATION_LANDSCAPE){
+            setContentView(R.layout.activity_all_hero_info);
+        }
     }
 }

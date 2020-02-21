@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="powerstats">#E79B1F</color>
+    <color name="biography">#1D1B1B</color>
+    <color name="connections">#00796B</color>
+    <color name="work">#303F9F</color>
+    <color name="appearance">#0097A7</color>
+</resources>

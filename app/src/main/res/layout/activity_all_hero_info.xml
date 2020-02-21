@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Activities.AllHeroInfoActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <com.glide.slider.library.SliderLayout
+                android:id="@+id/img_hero"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:fontFamily="@font/one_lobster"
+            android:id="@+id/fullscreen_content"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:foregroundGravity="center_vertical"
+            android:gravity="bottom|center"
+            android:keepScreenOn="true"
+            android:textColor="@android:color/black"
+            android:paddingBottom="20dp"
+            tools:text="hi"
+            android:shadowRadius="2"
+            android:shadowDx="1.5"
+            android:shadowDy="1.4"
+            android:shadowColor="@android:color/darker_gray"
+            android:textSize="25sp"
+            android:textStyle="italic" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                >
+
+            <TextView
+                android:textColor="@color/appearance"
+                android:id="@+id/hero_appearance"
+                android:fontFamily="@font/one_lobster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                tools:text="hi"
+                android:layout_marginLeft="60dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:textColor="@color/work"
+                android:fontFamily="@font/one_lobster"
+                android:id="@+id/hero_work"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                tools:text="hi"
+                android:layout_marginLeft="60dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:textColor="@color/biography"
+                android:id="@+id/hero_bio"
+                android:fontFamily="@font/one_lobster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                tools:text="hi"
+                android:layout_marginLeft="60dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:textColor="@color/connections"
+                android:id="@+id/hero_connection"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/one_lobster"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                tools:text="hi"
+                android:layout_marginLeft="60dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:textColor="@color/powerstats"
+                android:id="@+id/hero_powerstats"
+                android:fontFamily="@font/one_lobster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                tools:text="hi"
+                android:layout_marginLeft="60dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@android:color/darker_gray"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
